@@ -5,7 +5,7 @@ namespace CoreEscuela.Entidades
         string nombre;
         public string Nombre
         {
-            get { return nombre; }
+            get { return "Copia:" + nombre; }
             set { nombre = value.ToUpper(); }
         }
 
@@ -14,6 +14,9 @@ namespace CoreEscuela.Entidades
         public string Pais { get; set; }
         public string Ciudad { get; set; }
 
-        
+        public Escuela(string nombreEscuela, int año) => (Nombre, AñoDeCreación) = (nombreEscuela, año);
+
+
+
     }
 }
