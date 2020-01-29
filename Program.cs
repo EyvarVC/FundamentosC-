@@ -40,7 +40,7 @@ namespace Etapa1
         private static void ImprimirCursosEscuela(Escuela escuela)
         {
             WriteLine("====================");
-            WriteLine("Cursos de la Escuela Activos:");
+            WriteLine("Cursos de la Escuela Enabled:");
             WriteLine("====================");
             if (escuela?.Cursos != null) // ?, pregunta, si el obj escuela es diferente de null?, evalúa lo siguiente (Cursos)
             {
