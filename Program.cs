@@ -1,5 +1,6 @@
 ﻿using System;
 using CoreEscuela.Entidades;
+using static System.Console;
 
 namespace Etapa1
 {
@@ -21,29 +22,32 @@ namespace Etapa1
 
 
 
-            Console.WriteLine(escuela);
-            System.Console.WriteLine("===============");
+            WriteLine(escuela);
+            WriteLine("===============");
 
             ImprimirCursosEscuela(escuela);
 
             /* ImprimirCursosWhile(arregloCursos);
-            System.Console.WriteLine("===============");
+            WriteLine("===============");
             ImprimirCursosDoWhile(arregloCursos);
-            System.Console.WriteLine("===============");
+            WriteLine("===============");
             ImprimirCursosFor(arregloCursos);
-            System.Console.WriteLine("===============");
+            WriteLine("===============");
             ImprimirCursosForEach(arregloCursos); */
 
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
         {
-            System.Console.WriteLine("====================");
-            System.Console.WriteLine("Cursos de la escuela");
-            System.Console.WriteLine("===================="); 
-            foreach (Curso item in escuela.Cursos)
+            WriteLine("====================");
+            WriteLine("Cursos de la escuela");
+            WriteLine("====================");
+            if (escuela?.Cursos != null) // ?, pregunta, si el obj escuela es diferente de null?, evalúa lo siguiente (Cursos)
             {
-                System.Console.WriteLine($"Curso:{item.Nombre} ID:{item.UniqueId}");
+                foreach (Curso item in escuela.Cursos)
+                {
+                    WriteLine($"Curso:{item.Nombre} ID:{item.UniqueId}");
+                }
             }
         }
 
