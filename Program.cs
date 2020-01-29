@@ -12,24 +12,39 @@ namespace Etapa1
             escuela.Ciudad = "Bogotá";
             escuela.TipoEscuela = TiposEscuela.Primaria;
 
-            Curso[] arregloCursos =
+            escuela.Cursos = new Curso[]
             {
                 new Curso() {Nombre = "101", Jornada = TiposJornada.Noche},
                 new Curso() {Nombre = "201", Jornada = TiposJornada.Tarde},
                 new Curso() {Nombre = "301", Jornada = TiposJornada.Tarde}
             };
 
+
+
             Console.WriteLine(escuela);
             System.Console.WriteLine("===============");
 
-            ImprimirCursosWhile(arregloCursos);
+            ImprimirCursosEscuela(escuela);
+
+            /* ImprimirCursosWhile(arregloCursos);
             System.Console.WriteLine("===============");
             ImprimirCursosDoWhile(arregloCursos);
             System.Console.WriteLine("===============");
             ImprimirCursosFor(arregloCursos);
             System.Console.WriteLine("===============");
-            ImprimirCursosForEach(arregloCursos);
+            ImprimirCursosForEach(arregloCursos); */
 
+        }
+
+        private static void ImprimirCursosEscuela(Escuela escuela)
+        {
+            System.Console.WriteLine("====================");
+            System.Console.WriteLine("Cursos de la escuela");
+            System.Console.WriteLine("===================="); 
+            foreach (Curso item in escuela.Cursos)
+            {
+                System.Console.WriteLine($"Curso:{item.Nombre} ID:{item.UniqueId}");
+            }
         }
 
         private static void ImprimirCursosWhile(Curso[] ListaCursos)
