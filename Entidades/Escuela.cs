@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace CoreEscuela.Entidades
 {
-    class Escuela
+    public class Escuela
     {
 
         string nombre;
@@ -26,6 +26,7 @@ namespace CoreEscuela.Entidades
         
 
         public Escuela(string nombreEscuela, int año) => (Nombre, AñoDeCreación) = (nombreEscuela, año);
+        
 
         public override string ToString()
         {
