@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using CoreEscuela.Entidades;
 using static System.Console;
 
@@ -13,12 +14,21 @@ namespace Etapa1
             escuela.Ciudad = "Bogotá";
             escuela.TipoEscuela = TiposEscuela.Primaria;
 
-            escuela.Cursos = new Curso[]
+            /* escuela.Cursos = new Curso[]
+            {
+                new Curso() {Nombre = "101", Jornada = TiposJornada.Noche},
+                new Curso() {Nombre = "201", Jornada = TiposJornada.Tarde},
+                new Curso() {Nombre = "301", Jornada = TiposJornada.Tarde}
+            }; */
+
+            List<Curso> listaCursos = new List<Curso>
             {
                 new Curso() {Nombre = "101", Jornada = TiposJornada.Noche},
                 new Curso() {Nombre = "201", Jornada = TiposJornada.Tarde},
                 new Curso() {Nombre = "301", Jornada = TiposJornada.Tarde}
             };
+;
+            escuela.Cursos = listaCursos;
 
 
 
@@ -27,20 +37,16 @@ namespace Etapa1
 
             ImprimirCursosEscuela(escuela);
 
-            /* ImprimirCursosWhile(arregloCursos);
-            WriteLine("===============");
-            ImprimirCursosDoWhile(arregloCursos);
-            WriteLine("===============");
-            ImprimirCursosFor(arregloCursos);
-            WriteLine("===============");
-            ImprimirCursosForEach(arregloCursos); */
+
+
+            
 
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
         {
             WriteLine("====================");
-            WriteLine("Cursos de la Escuela Enabled:");
+            WriteLine("Cursos de la Escuela:");
             WriteLine("====================");
             if (escuela?.Cursos != null) // ?, pregunta, si el obj escuela es diferente de null?, evalúa lo siguiente (Cursos)
             {
